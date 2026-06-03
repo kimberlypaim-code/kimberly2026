@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoAgro Brasil | Sustentabilidade no Campo</title>
+    <style>
+        /* --- VARIÁVEIS DE CORES E ESTILO (Jovem & Descolado) --- */
+        :root {
+            --verde-principal: #2ec4b6;
+            --verde-escuro: #0f4c5c;
+            --azul-destaque: #e3f2fd;
+            --branco: #ffffff;
+            --cinza-fundo: #f8f9fa;
+            --texto-escuro: #2b2d42;
+            --fonte-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: var(--fonte-principal);
+        }
+
+        body {
+            background-color: var(--cinza-fundo);
+            color: var(--texto-escuro);
+            line-height: 1.6;
+        }
+
+        /* --- HEADER & NAVEGAÇÃO --- */
+        header {
+            background-color: var(--branco);
+            padding: 1.5rem 10%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--verde-escuro);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--verde-principal);
+        }
+
+        nav a {
+            color: var(--texto-escuro);
+            text-decoration: none;
+            font-weight: 600;
+            margin-left: 2rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--verde-principal);
+        }
+
+        /* --- SEÇÃO HERO (Apresentação Principal) --- */
+        .hero {
+            padding: 10rem 10% 6rem 10%;
+            background: linear-gradient(135deg, var(--azul-destaque) 0%, #fff 100%);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 80vh;
+        }
+
+        .hero-conteudo {
+            max-width: 600px;
+        }
+
+        .hero-conteudo h1 {
+            font-size: 3rem;
+            color: var(--verde-escuro);
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-conteudo p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #5c677d;
+        }
+
+        /* --- FORMULÁRIO DE CAPTURA DE E-MAIL --- */
+        .form-captura {
+            display: flex;
+            gap: 0.5rem;
+            background: var(--branco);
+            padding: 0.5rem;
+            border-radius: 50px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            max-width: 500px;
+        }
+
+        .form-captura input[type="email"] {
+            border: none;
+            padding: 1rem 1.5rem;
+            font-size: 1rem;
+            width: 100%;
+            border-radius: 50px;
+            outline: none;
+        }
+
+        .form-captura button {
+            background-color: var(--verde-principal);
+            color: var(--branco);
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.2s;
+            white-space: nowrap;
+        }
+
+        .form-captura button:hover {
+            background-color: var(--verde-escuro);
+            transform: scale(1.03);
+        }
+
+        .hero-imagem {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            padding-left: 2rem;
+        }
+
+        /* Ilustração Simbólica Eco-Agro moderna */
+        .agro-card-art {
+            background: linear-gradient(45deg, var(--verde-principal), var(--verde-escuro));
+            width: 350px;
+            height: 350px;
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            animation: morphing 10s infinite alternate;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 5rem;
+            box-shadow: 0 15px 30px rgba(46, 196, 182, 0.4);
+        }
+
+        @keyframes morphing {
+            0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+            100% { border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%; }
+        }
+
+        /* --- SEÇÃO DIFERENCIAL & CONTEÚDO --- */
+        .conteudo-section {
+            padding: 6rem 10%;
+            background-color: var(--branco);
+        }
+
+        .section-titulo {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--verde-escuro);
+            margin-bottom: 3rem;
+        }
+
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .card {
+            background-color: var(--cinza-fundo);
+            padding: 2.5rem;
+            border-radius: 24px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.05);
+            border-color: var(--azul-destaque);
+        }
+
+        .card-icone {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .card h3 {
+            color: var(--verde-escuro);
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--verde-escuro);
+            color: var(--branco);
+            text-align: center;
+            padding: 3rem 10%;
+            font-size: 1rem;
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        /* --- RESPONSIVIDADE (MOBILE) --- */
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem 5%;
+            }
+            nav {
+                display: none; /* Simplificado para o exemplo */
+            }
+            .hero {
+                flex-direction: column;
+                padding: 8rem 5% 4rem 5%;
+                text-align: center;
+            }
+            .hero-conteudo h1 {
+                font-size: 2.2rem;
+            }
+            .form-captura {
+                flex-direction: column;
+                background: transparent;
+                box-shadow: none;
+                padding: 0;
+            }
+            .form-captura input[type="email"] {
+                background: #fff;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+                margin-bottom: 0.8rem;
+            }
+            .hero-imagem {
+                margin-top: 3rem;
+                justify-content: center;
+                padding-left: 0;
+            }
+            .agro-card-art {
+                width: 250px;
+                height: 250px;
+            }
+            .conteudo-section {
+                padding: 4rem 5%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">EcoAgro <span>Brasil</span></a>
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#solucoes">Soluções</a>
+            <a href="#sobre">Nosso Diferencial</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="inicio">
+        <div class="hero-conteudo">
+            <h1>O futuro do agronegócio é verde. 🌱</h1>
+            <p>Compartilhar informações e soluções sustentáveis para fortalecer o agronegócio e preservar o meio ambiente no Brasil.</p>
+            
+            <form class="form-captura" id="cadastroForm">
+                <input type="email" id="emailInput" placeholder="Digite seu melhor e-mail" required>
+                <button type="submit">Quero Inovar</button>
+            </form>
+        </div>
+        <div class="hero-imagem">
+            <div class="agro-card-art">🚜</div>
+        </div>
+    </section>
+
+    <section class="conteudo-section" id="solucoes">
+        <h2 class="section-titulo">Por que a EcoAgro Brasil é diferente?</h2>
+        
+        <div class="grid-cards">
+            <div class="card">
+                <span class="card-icone">💡</span>
+                <h3>União Perfeita</h3>
+                <p>Nós não escolhemos lados. Unimos a alta produtividade do campo com o respeito máximo à biodiversidade brasileira de forma simples.</p>
+            </div>
+
+            <div class="card">
+                <span class="card-icone">⚡</span>
+                <h3>Inovação Acessível</h3>
+                <p>Tecnologia no campo não precisa ser complicada. Traduzimos conceitos complexos para práticas que você aplica no dia a dia.</p>
+            </div>
+
+            <div class="card">
+                <span class="card-icone">🌍</span>
+                <h3>Preservação Ativa</h3>
+                <p>Aprenda métodos de conservação de solo, créditos de carbono, rotação de culturas e gerenciamento inteligente de recursos hídricos.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 EcoAgro Brasil. Conectando tecnologia, campo e futuro.</p>
+    </footer>
+
+    <script>
+        document.getElementById('cadastroForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede a página de recarregar
+            
+            const email = document.getElementById('emailInput').value;
+            
+            if(email) {
+                // Feedback moderno e direto para o usuário jovem
+                alert(`Boa! O e-mail "${email}" foi cadastrado com sucesso. Prepare-se para receber conteúdos incríveis! 🚀`);
+                document.getElementById('emailInput').value = ''; // Limpa o campo
+            }
+        });
+    </script>
+</body>
+</html>
